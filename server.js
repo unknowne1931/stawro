@@ -552,6 +552,4 @@ app.get('/check', (req, res) => {
 
 
 
-app.listen(port, () => {
-    console.log(`Server Running on Port ${port} :`);
-})
+app.listen(process.env.PORT || 5000)

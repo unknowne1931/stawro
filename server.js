@@ -16,11 +16,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-
-app.use(cors());
-
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['https://stawro.com'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -482,7 +479,6 @@ app.post('/userdatata4', async (req, res) => {
 
 app.get('/', (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.send('API is Running');
     DataModel.find({})
     .then(datas => res.json(datas))
     .catch(err => res.json(err))

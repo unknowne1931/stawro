@@ -11,7 +11,6 @@ const useragent = require('express-useragent');
 
 
 const app = express();
-const port = 5000;
 app.use(express.static('public'))
 app.use(express.json());
 app.use(cookieParser());

@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+
+app.use(cors());
+
 app.use(cors({
   origin: ['http://localhost:3000'],
   methods: ['GET', 'POST'],
@@ -478,6 +481,8 @@ app.post('/userdatata4', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials")
+  res.send("Api is Running");
     DataModel.find({})
     .then(datas => res.json(datas))
     .catch(err => res.json(err))

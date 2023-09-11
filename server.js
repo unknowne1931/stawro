@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: ['https://stawro.site'],
+  origin: ['https://stawro.com'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
